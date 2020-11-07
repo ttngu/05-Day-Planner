@@ -3,12 +3,6 @@ var currentDay = $("#currentDay");
 var time = moment().format("MMM. Do, YYYY h:mm a");
 var dayContent = (localStorage.getItem("input"));
 
-
-// localStorage.setItem("event", dayInput);
-// alert ("Event Saved");
-// console.log(dayInput)
-// console.log("Event Saved!")
-
 // Append Current Date and time to the top of the page
 console.log(time)
 $("#currentDay").text(time);
@@ -49,12 +43,6 @@ let currentHour = parseInt(moment().format("H"));
 //     }
 // });
 
-// Adding an event/text to timeblocks
-// var inpKey = document.getElementsByClassName("col-md-10 description");
-// var saveEvent = document.getElementsByClassName("btn"); 
-// var outputValue = document.getElementsByClassName("col-md-10 description");
-
-
 // Save Button 
 $(".saveBtn").on("click", function(){
     console.log("You clicked save!")
@@ -62,9 +50,8 @@ $(".saveBtn").on("click", function(){
     var currentHour = $(this).parent().attr("id");
     console.log(dayInput, currentHour)
     localStorage.setItem(currentHour, dayInput);
-    // This will refresh the page. Use this to save and show the event input to the planner **AT THE END, MUST GET LOCAL STORAGE TO WORK FIRST**
-    location.reload();
-    
+    // This will refresh the page when the save button is clicked, updating the time and the planner text.
+    // location.reload();
 });
 // This saves the text and gets the items from local storage
 $("#hour-9 .description").val(localStorage.getItem("hour-9"));
@@ -77,14 +64,20 @@ $("#hour-15 .description").val(localStorage.getItem("hour-15"));
 $("#hour-16 .description").val(localStorage.getItem("hour-16"));
 $("#hour-17 .description").val(localStorage.getItem("hour-17"));
 $("#hour-18 .description").val(localStorage.getItem("hour-18"));
-// in a function
+
+
 // ColorBlocking
-// Define current time
-// Var for the timeblocks 
-// Compare for past, present or future
-// If past, grey
-$("").addclass
-// for each loop
-// what you need to target within the loop (timeblock)
-// evaluation 
-// use addclass and removeclass 
+// in a function
+$(document).ready(function(){
+    // Define current time
+    console.log(time)
+    // Var for the timeblocks 
+    var timeBlock = $("textarea").addClass("time-block");
+    console.log(timeBlock);
+    // Compare for past, present or future
+    // If past, grey
+    // for each loop
+    // what you need to target within the loop (timeblock)
+    // evaluation 
+    // use addclass and removeclass 
+})
