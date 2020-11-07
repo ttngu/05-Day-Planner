@@ -75,6 +75,7 @@ $(document).ready(function(){
     var timeBlock = $("textarea").addClass("time-block");
     console.log(timeBlock);
     // Compare for past, present or future
+    // If the id of the parent of the timeBlock is < > =, set a color
     // If past, grey
     // for each loop
     // what you need to target within the loop (timeblock)
