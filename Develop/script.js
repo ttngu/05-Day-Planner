@@ -1,8 +1,13 @@
 // Define Variables 
 var currentDay = $("#currentDay");
 var time = moment().format("MMM. Do, YYYY h:mm a");
-var dayContent = (localStorage.getItem("description"));
+var dayContent = (localStorage.getItem("input"));
 
+
+// localStorage.setItem("event", dayInput);
+// alert ("Event Saved");
+// console.log(dayInput)
+// console.log("Event Saved!")
 
 // Append Current Date and time to the top of the page
 console.log(time)
@@ -14,8 +19,8 @@ $("#currentDay").text(time);
 var rows = document.getElementsByClassName("row");
 let currentHour = parseInt(moment().format("H"));
 
-console.log(rows);
-console.log(currentHour);
+// console.log(rows);
+// console.log(currentHour);
 
 // ????WHY DOESN'T THIS WORK????
 // Array.from(rows).forEach(row => {
@@ -51,14 +56,35 @@ console.log(currentHour);
 
 
 // Save Button 
-$(".saveBtn").on("click", function(event){
-    console.log("Hello!")
-    var input = $("#" + event.target.value).val();
-    console.log(input);
-    console.log(dayContent);
-
-
-    // This will refresh the page. Use this to save and show the event input to the planner **AT THE END**
+$(".saveBtn").on("click", function(){
+    console.log("You clicked save!")
+    var dayInput = $(this).siblings(".description").val();
+    var currentHour = $(this).parent().attr("id");
+    console.log(dayInput, currentHour)
+    localStorage.setItem(currentHour, dayInput);
+    // This will refresh the page. Use this to save and show the event input to the planner **AT THE END, MUST GET LOCAL STORAGE TO WORK FIRST**
     location.reload();
     
 });
+// This saves the text and gets the items from local storage
+$("#hour-9 .description").val(localStorage.getItem("hour-9"));
+$("#hour-10 .description").val(localStorage.getItem("hour-10"));
+$("#hour-11 .description").val(localStorage.getItem("hour-11"));
+$("#hour-12 .description").val(localStorage.getItem("hour-12"));
+$("#hour-13 .description").val(localStorage.getItem("hour-13"));
+$("#hour-14 .description").val(localStorage.getItem("hour-14"));
+$("#hour-15 .description").val(localStorage.getItem("hour-15"));
+$("#hour-16 .description").val(localStorage.getItem("hour-16"));
+$("#hour-17 .description").val(localStorage.getItem("hour-17"));
+$("#hour-18 .description").val(localStorage.getItem("hour-18"));
+// in a function
+// ColorBlocking
+// Define current time
+// Var for the timeblocks 
+// Compare for past, present or future
+// If past, grey
+$("").addclass
+// for each loop
+// what you need to target within the loop (timeblock)
+// evaluation 
+// use addclass and removeclass 
