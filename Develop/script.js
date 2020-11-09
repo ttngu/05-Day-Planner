@@ -47,9 +47,9 @@ let currentHour = parseInt(moment().format("H"));
 $(".saveBtn").on("click", function(){
     console.log("You clicked save!")
     var dayInput = $(this).siblings(".description").val();
-    var currentHour = $(this).parent().attr("id");
-    console.log(dayInput, currentHour)
-    localStorage.setItem(currentHour, dayInput);
+    var setHour = $(this).parent().attr("id");
+    console.log(dayInput, setHour)
+    localStorage.setItem(setHour, dayInput);
     // This will refresh the page when the save button is clicked, updating the time and the planner text.
     // location.reload();
 });
@@ -75,6 +75,12 @@ $(document).ready(function(){
     var timeBlock = $("textarea").addClass("time-block");
     console.log(timeBlock);
     // Compare for past, present or future
+    if (setHour > time) {
+        var pastBlock = $("textarea").addClass("past-block");
+        $(pastBlock).attr(".past");
+        console.log(pastBlock);
+
+    }
     // If the id of the parent of the timeBlock is < > =, set a color
     // If past, grey
     // for each loop
