@@ -8,40 +8,31 @@ console.log(time)
 $("#currentDay").text(time);
 
 
-// Colorblocks
+// Set timeblock colors
+var timeOfday = ["9", "10", "11", "12", "13", "14", "15", "16", "17", "18"]
+colorBlock();
 
-var rows = document.getElementsByClassName("row");
-let currentHour = parseInt(moment().format("H"));
-
-// console.log(rows);
-// console.log(currentHour);
-
-// ????WHY DOESN'T THIS WORK????
-// Array.from(rows).forEach(row => {
-//     let
-//         rowIdString = row.id,
-//         rowHour;
-//     if (rowIdString) {
-//         rowHour = parseInt(rowIdString);
-//     }
-//     // Sets the row colors after comparing the current hour to the row hour
-//     if (rowHour) {
-//         // This will set the current hour to red
-//         if (currentHour === rowHour) {
-//             setColor(row, "red");
-//         }
-//         // This will set the future hours to green
-//         else if ((currentHour < rowHour) && (currentHour > rowHour - 6)) 
-//             setColor(row, "green");
-//         // This will set the past hours to grey
-//         else if ((currentHour > rowHour) && (currentHour < rowHour + 6))
-//             setColor(row, "lightgrey");
-//         // This will set any other hours to whtie
-//         else {
-//             setColor(row, "white");
-//         }
-//     }
-// });
+function colorBlock() {
+    var currentHour = parseInt(moment().format("H"));
+    
+  for(var i = 0; i < timeOfday.length; i++) {
+    // Future hours green
+    if (parseInt(timeOfday[i]) > currentHour) {
+      $("#hour-" + timeOfday[i]).attr("style", "background-color: #58ce7b");
+      console.log("past");
+    // Past Hours to grey 
+    } 
+    else if (parseInt(timeOfday[i]) < currentHour) {
+      $("#hour-" + timeOfday[i]).attr("style", "background-color: lightgray");
+    
+    // Current hours to red
+    } 
+    else if (parseInt(timeOfday[i]) == currentHour) {
+      $("#hour-" + timeOfday[i]).attr("style", "background-color: #fc665e");
+    
+    }
+  }
+}
 
 // Save Button 
 $(".saveBtn").on("click", function(){
@@ -53,6 +44,7 @@ $(".saveBtn").on("click", function(){
     // This will refresh the page when the save button is clicked, updating the time and the planner text.
     // location.reload();
 });
+
 // This saves the text and gets the items from local storage
 $("#hour-9 .description").val(localStorage.getItem("hour-9"));
 $("#hour-10 .description").val(localStorage.getItem("hour-10"));
@@ -68,23 +60,25 @@ $("#hour-18 .description").val(localStorage.getItem("hour-18"));
 
 // ColorBlocking
 // in a function
-$(document).ready(function(){
-    // Define current time
-    console.log(time)
-    // Var for the timeblocks 
-    var timeBlock = $("textarea").addClass("time-block");
-    console.log(timeBlock);
-    // Compare for past, present or future
-    if (setHour > time) {
-        var pastBlock = $("textarea").addClass("past-block");
-        $(pastBlock).attr(".past");
-        console.log(pastBlock);
+// $(document).ready(function(){
+//     // Define current time
+//     console.log(time)
+//     // Var for the timeblocks 
+//     var timeBlock = $("textarea").addClass("time-block");
+//     console.log(timeBlock);
+//     // Compare for past, present or future
+//     if (setHour > time) {
+//         var pastBlock = $("textarea").addClass("past-block");
+//         $(pastBlock).attr(".past");
+//         console.log(pastBlock);
 
-    }
+//     }
     // If the id of the parent of the timeBlock is < > =, set a color
     // If past, grey
     // for each loop
     // what you need to target within the loop (timeblock)
     // evaluation 
     // use addclass and removeclass 
-})
+// })
+
+
