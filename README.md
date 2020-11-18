@@ -10,7 +10,7 @@ AS AN employee with a busy schedule
 I WANT to add important events to a daily planner
 SO THAT I can manage my time effectively
 
-![Alt Text](https://github.com/ttngu/05-Day-Planner/blob/main/screencap.gif?raw=true)
+![Alt Text](https://github.com/ttngu/05-Day-Planner/blob/master/screencap.gif)
 
 ## Features
 - Upon opening the planner, the current date and time are shown at the top of the page.
