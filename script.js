@@ -42,7 +42,7 @@ $(".saveBtn").on("click", function(){
     console.log(dayInput, setHour)
     localStorage.setItem(setHour, dayInput);
     // This will refresh the page when the save button is clicked, updating the time and the planner text.
-    // location.reload();
+    location.reload();
 });
 
 // This saves the text and gets the items from local storage
