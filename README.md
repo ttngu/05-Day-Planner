@@ -22,4 +22,5 @@ SO THAT I can manage my time effectively
 
 ## Links
 https://ttngu.github.io/05-Day-Planner/
+<br>
 https://github.com/ttngu/05-Day-Planner
