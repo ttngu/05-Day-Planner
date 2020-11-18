@@ -4,7 +4,6 @@ var time = moment().format("MMM. Do, YYYY h:mm a");
 var dayContent = (localStorage.getItem("input"));
 
 // Append Current Date and time to the top of the page
-console.log(time)
 $("#currentDay").text(time);
 
 
