@@ -58,27 +58,4 @@ $("#hour-17 .description").val(localStorage.getItem("hour-17"));
 $("#hour-18 .description").val(localStorage.getItem("hour-18"));
 
 
-// ColorBlocking
-// in a function
-// $(document).ready(function(){
-//     // Define current time
-//     console.log(time)
-//     // Var for the timeblocks 
-//     var timeBlock = $("textarea").addClass("time-block");
-//     console.log(timeBlock);
-//     // Compare for past, present or future
-//     if (setHour > time) {
-//         var pastBlock = $("textarea").addClass("past-block");
-//         $(pastBlock).attr(".past");
-//         console.log(pastBlock);
-
-//     }
-    // If the id of the parent of the timeBlock is < > =, set a color
-    // If past, grey
-    // for each loop
-    // what you need to target within the loop (timeblock)
-    // evaluation 
-    // use addclass and removeclass 
-// })
-
 
